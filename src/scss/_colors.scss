@@ -1,0 +1,72 @@
+// @each $key, $val in $colors {
+//     .text-#{$key} {
+//       color: $val;
+//     }
+//     .text-hover-#{$key} {
+//       &:hover {
+//         color: $val;
+//       }
+//     }
+//     .bg-#{$key} {
+//       background-color: $val;
+//     }
+//     @if ($val != black and $val != white) {
+//       // light variations
+//       @for $i from 1 through 9 {
+//         .text-#{$key}-light-#{$i} {
+//           color: mix(white, $val, $i * 10);
+//         }
+//         .text-hover-#{$key}-light-#{$i} {
+//           &:hover {
+//             color: mix(white, $val, $i * 10);
+//           }
+//         }
+//         .bg-#{$key}-light-#{$i} {
+//           background-color: mix(white, $val, $i * 10);
+//         }
+//       }
+  
+//       // dark variations
+//       @for $i from 1 through 9 {
+//         .text-#{$key}-dark-#{$i} {
+//           color: mix(black, $val, $i * 10);
+//         }
+//         .text-hover-#{$key}-dark-#{$i} {
+//           &:hover {
+//             color: mix(black, $val, $i * 10);
+//           }
+//         }
+//         .bg-#{$key}-dark-#{$i} {
+//           background-color: mix(black, $val, $i * 10);
+//         }
+//       }
+//     }
+//   }
+  
+//   // &:nth-child, &:active, &:visited, &:last-child etc
+
+
+
+// Primary Colors
+// $primary-color: #007bff; // blue
+$primary-color: #31b667;
+$primary-dark: #0056b3; // darker blue
+$primary-light: #c3d9ff; // lighter blue
+
+// Secondary Colors
+$secondary-color: #6c757d; // grey
+$secondary-dark: #454d54; // darker grey
+$secondary-light: #b7c2c9; // lighter grey
+
+// Accent Colors
+$success-color: #28a745; // green
+$info-color: #17a2b8; // turquoise
+$warning-color: #ffc107; // yellow
+$danger-color: #dc3545; // red
+
+// Neutral Colors
+$white: #ffffff; // white
+$off-white: #f8f9fa; // off-white
+$black: #000000; // black
+$off-black: #343a40; // off-black
+$dark: #111223;
