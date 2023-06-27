@@ -78,7 +78,8 @@ const RecipeDetailPage = () => {
           </div>
           <div className="recipe-post recipe-post-body">
             <div className="recipe-post-instruction">
-              <h4>Instruction</h4>
+              {/* <h4>Instruction</h4> */}
+              <h2 className="heading">Instruction</h2>
               <ul>
                 <li>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed

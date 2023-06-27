@@ -2,6 +2,9 @@
 @import "colors";
 @import "flex";
 
+*{
+    box-sizing: border-box;
+}
 
 .container{
     width: 100%;
@@ -9,6 +12,7 @@
     max-width: 1120px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 24px;
 }
 
 .big-heading{
@@ -380,6 +384,8 @@
         padding: 8px;
         cursor: pointer;
         position: relative;
+        //z-index: 999;
+        display: none;
         span{
             width: 24px;
             height: 2px;
@@ -399,6 +405,9 @@
         
         }
     }
+    &-close{
+        display: none;
+    }
 }
 /*----------------Home---------------------------*/
 .hero{
@@ -416,7 +425,7 @@
         align-items: center;
     }
     &-content{
-        width: 60%;
+        width: 645px;
         padding-right: 60px;
         h1{
             font-size: 76px;
@@ -439,6 +448,8 @@
 .heading{
     font-size: 32px;
     margin: 0 0 32px 0;
+    line-height: 1.4;
+    font-weight: 500;
 }
 .sub-heading{
     font-size: 12px;
@@ -609,11 +620,13 @@
 .recipe-post{
     display: flex;
     &-content{
+        width: 55%;
         padding: 0 0 0 32px;
         h1{
             font-size: 48px;
             line-height: 1.26;
             margin: 0 0 24px 0;
+            font-weight: 500;
         }
         .author{
             display: flex;
@@ -700,8 +713,9 @@
         margin-bottom: 32px;
     }
     &-img{
-        min-width: 380px;
-        height: 300px;
+        width: 45%;
+        //min-height: 300px;
+        height: auto;
         img{
             width: 100%;
             height: 100%;
@@ -710,16 +724,18 @@
     }
     &-body{
         align-items: flex-start;
+        margin-bottom: 32px;
     }
     &-instruction{
         width: 70%;
-        padding-right: 60px;
+        padding-right: 60px;        
         h4{
             margin-bottom: 64px;
         }
         ul{
             counter-reset: li;
             list-style-type: none;
+            margin-top: 64px;
             li{
                 margin: 0 0 64px 0;
                 position: relative;
@@ -732,6 +748,9 @@
                     position:absolute;
                     top:-32px;
                     font-weight: 600;
+                }
+                &:last-child{
+                    margin: 0;
                 }
             }
         }
@@ -887,28 +906,283 @@
     margin: 0 auto 32px;
 }
 /*-----------------Responsive-------------------*/
-/* Extra small devices (phones) */
-@media only screen and (max-width: 575.98px) {
-   
-  }
-  
-  /* Small devices (tablets) */
-@media only screen and (max-width: 767.98px) {
-   
-   
-  }
-  
-  /* Medium devices (desktops) */
-  @media only screen and (max-width: 991.98px) {
-
-  }
-  
-  /* Large devices (large desktops) */
-  @media only screen and (max-width: 1199.98px) {
-    
-    
-  }
   
 @media screen and (max-width: 1200px){
   
+}
+@media only screen and (max-width: 1199.98px) {
+    
+    
+}
+@media only screen and (max-width:1023.08px){
+    .categories {
+        .category-list {
+            .category{
+                .image{
+                    height: 180px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 991.98px) {
+
+}
+@media only screen and (max-width: 899.98px) {
+    .navbar-icon{
+        display: flex;
+    }
+    .navbar{
+        &-left{
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            text-align: center;
+            background: #FFF;
+            opacity: 0;
+            z-index: -1;
+            visibility: hidden;
+            transition: all .375s;
+            flex-direction: column;
+            &.active{
+                opacity: 1;
+                z-index: 100;
+                visibility: visible;
+            }
+           
+        }
+        &-menu{
+            display: flex;
+            width: 100%; 
+            margin: 100px 0 0;           
+            ul{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                li{
+                  padding: 24px 0;
+                }
+            }
+        }
+        &-social-links{
+            margin: 24px 0 0;
+        }
+        &-close{
+            display: block;
+            position: absolute;
+            right: 32px;
+            top: 32px;
+            width: 24px;
+            height: 24px;
+        }
+
+    }
+    .hero-content h1{
+        font-size: 56px;
+        line-height: 1;
+    }
+}
+@media only screen and (max-width: 768px){
+    .section{
+        padding: 60px 0;
+    }
+    .recipe-post{
+        flex-direction: column;
+        > div{
+            width: 100%;
+        }
+        &-header{
+            padding: 24px;
+        }
+        &-instruction{
+           padding: 0;
+        }
+        &-content {     
+            padding: 0;
+            margin: 32px 0 0;       
+            h1{
+                font-size: 36px;
+                font-weight: 500;
+            }
+        }
+        &-ingredient{
+            margin: 40px 0 0;
+            width: auto !important;
+
+        }
+    }
+}
+@media only screen and (max-width: 767.98px) {
+    .sub-heading{
+        margin-bottom: 8px;
+    }
+    .heading{
+        font-size: 28px;
+        margin-bottom: 16px;
+    }
+    .hero{
+        &-content {
+            width: 100%;
+            padding: 0;
+            h1{
+                font-size: 48px;
+            }
+        }
+    }
+    .categories {
+        .category-list {
+            flex-wrap: wrap;
+            .category{
+                width: 50%;
+                margin: 0 0 48px 0;
+            }
+        }
+    }
+    .latest-recipes, .most-liked-recipes{
+        .recipe-card{
+            width: calc(50% - 32px);
+        }
+    }
+    .footer {
+        .contact{
+            flex-wrap: wrap;
+            &-image{
+               width: 100%;
+               height: auto;
+               max-height: 480px;
+            }
+            &-content{
+                width: 100%;
+                padding: 0;
+                margin-top: 40px;
+                flex-direction: column;
+                align-items: self-start;
+                p{
+                    max-width: 100%;
+                    margin-bottom: 24px;
+                }
+
+            }
+        }
+    }
+    .recipe-weekly{
+        .container{
+            height: auto;
+            box-shadow: none;
+        }
+        .d-flex{
+            flex-wrap: wrap;
+            box-shadow: 0 4px 20px 12px rgba(0, 0, 0, 0.15);
+        }
+        &-img{
+            width: 100%;
+            height: 540px;
+        }
+        &-content{
+            width: 100%;           
+            padding: 48px;
+
+        }
+    }
+   
+}
+@media only screen and (max-width: 575.98px) {
+    .section{
+        padding: 60px 0;
+    }
+    .hero-content h1{
+        font-size: 36px;
+    }
+    .categories {
+        .category-list {
+            flex-wrap: wrap;
+            .category{
+                width: 50%;
+                margin: 0 0 48px 0;
+                .image{
+                    height: 160px;
+                }
+            }
+        }
+    }
+    .latest-recipes, 
+    .most-liked-recipes{
+        .recipe-card{
+            width: 100%;
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+    .recipe-weekly{
+        &-img{
+            height: auto;
+        }
+        &-content{
+            padding: 24px;
+            p{
+                max-width: 100%;
+                margin-bottom: 24px;
+            }
+
+        }
+    }
+    .recipe-card{
+        &-img{
+
+    }}
+
+}
+@media only screen and (max-width: 480px) {
+    .categories {
+        .category-list {
+            .category{
+                .image{
+                    height: 120px;
+                }
+            }
+        }
+    }
+    .recipe-post{
+        &-header{
+
+        }
+        &-instruction{
+
+        }
+        &-content {     
+      
+            h1{
+                font-size: 36px;
+                font-weight: 500;
+            }
+            &-detail{
+                flex-direction: column;
+                > div{
+                    margin: 0 0 16px 0;
+                    &:last-child{
+                        margin: 0;
+                    }
+                }
+            }
+            &-header{
+                flex-direction: column;
+                .author{
+                    margin-bottom: 16px;
+                }
+            }
+        }
+        &-ingredient{
+        
+
+        }
+    }
+}
+@media only screen and (max-width: 375px){
+    .recipe-card-img {
+        height: 260px;
+        overflow: hidden;
+    }
 }

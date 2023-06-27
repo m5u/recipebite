@@ -281,11 +281,16 @@ h6 {
   order: 10;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .container {
   width: 100%;
   max-width: 1120px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 24px;
 }
 
 .big-heading {
@@ -629,6 +634,7 @@ h6 {
   padding: 8px;
   cursor: pointer;
   position: relative;
+  display: none;
 }
 .navbar-icon span {
   width: 24px;
@@ -647,6 +653,9 @@ h6 {
 .navbar-icon span:nth-of-type(3) {
   top: 70%;
 }
+.navbar-close {
+  display: none;
+}
 
 /*----------------Home---------------------------*/
 .hero {
@@ -663,7 +672,7 @@ h6 {
   align-items: center;
 }
 .hero-content {
-  width: 60%;
+  width: 645px;
   padding-right: 60px;
 }
 .hero-content h1 {
@@ -684,6 +693,8 @@ h6 {
 .heading {
   font-size: 32px;
   margin: 0 0 32px 0;
+  line-height: 1.4;
+  font-weight: 500;
 }
 
 .sub-heading {
@@ -845,12 +856,14 @@ h6 {
   display: flex;
 }
 .recipe-post-content {
+  width: 55%;
   padding: 0 0 0 32px;
 }
 .recipe-post-content h1 {
   font-size: 48px;
   line-height: 1.26;
   margin: 0 0 24px 0;
+  font-weight: 500;
 }
 .recipe-post-content .author {
   display: flex;
@@ -934,8 +947,8 @@ h6 {
   margin-bottom: 32px;
 }
 .recipe-post-img {
-  min-width: 380px;
-  height: 300px;
+  width: 45%;
+  height: auto;
 }
 .recipe-post-img img {
   width: 100%;
@@ -944,6 +957,7 @@ h6 {
 }
 .recipe-post-body {
   align-items: flex-start;
+  margin-bottom: 32px;
 }
 .recipe-post-instruction {
   width: 70%;
@@ -955,6 +969,7 @@ h6 {
 .recipe-post-instruction ul {
   counter-reset: li;
   list-style-type: none;
+  margin-top: 64px;
 }
 .recipe-post-instruction ul li {
   margin: 0 0 64px 0;
@@ -969,6 +984,9 @@ h6 {
   position: absolute;
   top: -32px;
   font-weight: 600;
+}
+.recipe-post-instruction ul li:last-child {
+  margin: 0;
 }
 .recipe-post-ingredient {
   box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.06);
@@ -1107,7 +1125,216 @@ h6 {
 }
 
 /*-----------------Responsive-------------------*/
-/* Extra small devices (phones) */
-/* Small devices (tablets) */
-/* Medium devices (desktops) */
-/* Large devices (large desktops) */
+@media only screen and (max-width: 1023.08px) {
+  .categories .category-list .category .image {
+    height: 180px;
+  }
+}
+@media only screen and (max-width: 899.98px) {
+  .navbar-icon {
+    display: flex;
+  }
+  .navbar-left {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    background: #FFF;
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;
+    transition: all 0.375s;
+    flex-direction: column;
+  }
+  .navbar-left.active {
+    opacity: 1;
+    z-index: 100;
+    visibility: visible;
+  }
+  .navbar-menu {
+    display: flex;
+    width: 100%;
+    margin: 100px 0 0;
+  }
+  .navbar-menu ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .navbar-menu ul li {
+    padding: 24px 0;
+  }
+  .navbar-social-links {
+    margin: 24px 0 0;
+  }
+  .navbar-close {
+    display: block;
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 24px;
+    height: 24px;
+  }
+  .hero-content h1 {
+    font-size: 56px;
+    line-height: 1;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+  .recipe-post {
+    flex-direction: column;
+  }
+  .recipe-post > div {
+    width: 100%;
+  }
+  .recipe-post-header {
+    padding: 24px;
+  }
+  .recipe-post-instruction {
+    padding: 0;
+  }
+  .recipe-post-content {
+    padding: 0;
+    margin: 32px 0 0;
+  }
+  .recipe-post-content h1 {
+    font-size: 36px;
+    font-weight: 500;
+  }
+  .recipe-post-ingredient {
+    margin: 40px 0 0;
+    width: auto !important;
+  }
+}
+@media only screen and (max-width: 767.98px) {
+  .sub-heading {
+    margin-bottom: 8px;
+  }
+  .heading {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+  .hero-content {
+    width: 100%;
+    padding: 0;
+  }
+  .hero-content h1 {
+    font-size: 48px;
+  }
+  .categories .category-list {
+    flex-wrap: wrap;
+  }
+  .categories .category-list .category {
+    width: 50%;
+    margin: 0 0 48px 0;
+  }
+  .latest-recipes .recipe-card, .most-liked-recipes .recipe-card {
+    width: calc(50% - 32px);
+  }
+  .footer .contact {
+    flex-wrap: wrap;
+  }
+  .footer .contact-image {
+    width: 100%;
+    height: auto;
+    max-height: 480px;
+  }
+  .footer .contact-content {
+    width: 100%;
+    padding: 0;
+    margin-top: 40px;
+    flex-direction: column;
+    align-items: self-start;
+  }
+  .footer .contact-content p {
+    max-width: 100%;
+    margin-bottom: 24px;
+  }
+  .recipe-weekly .container {
+    height: auto;
+    box-shadow: none;
+  }
+  .recipe-weekly .d-flex {
+    flex-wrap: wrap;
+    box-shadow: 0 4px 20px 12px rgba(0, 0, 0, 0.15);
+  }
+  .recipe-weekly-img {
+    width: 100%;
+    height: 540px;
+  }
+  .recipe-weekly-content {
+    width: 100%;
+    padding: 48px;
+  }
+}
+@media only screen and (max-width: 575.98px) {
+  .section {
+    padding: 60px 0;
+  }
+  .hero-content h1 {
+    font-size: 36px;
+  }
+  .categories .category-list {
+    flex-wrap: wrap;
+  }
+  .categories .category-list .category {
+    width: 50%;
+    margin: 0 0 48px 0;
+  }
+  .categories .category-list .category .image {
+    height: 160px;
+  }
+  .latest-recipes .recipe-card,
+  .most-liked-recipes .recipe-card {
+    width: 100%;
+  }
+  .latest-recipes .recipe-card:last-child,
+  .most-liked-recipes .recipe-card:last-child {
+    margin-bottom: 0;
+  }
+  .recipe-weekly-img {
+    height: auto;
+  }
+  .recipe-weekly-content {
+    padding: 24px;
+  }
+  .recipe-weekly-content p {
+    max-width: 100%;
+    margin-bottom: 24px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .categories .category-list .category .image {
+    height: 120px;
+  }
+  .recipe-post-content h1 {
+    font-size: 36px;
+    font-weight: 500;
+  }
+  .recipe-post-content-detail {
+    flex-direction: column;
+  }
+  .recipe-post-content-detail > div {
+    margin: 0 0 16px 0;
+  }
+  .recipe-post-content-detail > div:last-child {
+    margin: 0;
+  }
+  .recipe-post-content-header {
+    flex-direction: column;
+  }
+  .recipe-post-content-header .author {
+    margin-bottom: 16px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .recipe-card-img {
+    height: 260px;
+    overflow: hidden;
+  }
+}

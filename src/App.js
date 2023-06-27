@@ -6,11 +6,13 @@ import RecipeDetailPage from "./pages/RecipeDetailPage";
 import { useEffect } from "react";
 import RecipesPage from "./pages/RecipesPage";
 import AboutPage from "./pages/AboutPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <GlobalProvider>
       <Router>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/recipe/:id" element={<RecipeDetailPage />} />

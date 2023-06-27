@@ -5,9 +5,17 @@ import {
   FaPinterestP,
   FaTwitter,
 } from "react-icons/fa";
+import { useState } from "react";
+import { MdClose } from "react-icons/md";
 
 export default function Header() {
-  const handleToggleIcon = () => {};
+  const [isActive, setActive] = useState(false);
+  const handleToggleIcon = () => {
+    setActive(!isActive);
+  };
+  const closeMenu = () => {
+    setActive(false);
+  };
 
   return (
     <>
@@ -19,12 +27,13 @@ export default function Header() {
                 Tasty<span>Bites</span>
               </p>
             </NavLink>
-            <div className="navbar-icon" onChange={handleToggleIcon}>
+            <div className="navbar-icon" onClick={handleToggleIcon}>
               <span></span>
               <span></span>
               <span></span>
             </div>
-            <div className="navbar-left">
+            <div className={isActive ? "navbar-left active" : "navbar-left"}>
+              <MdClose onClick={closeMenu} className="navbar-close" />
               <div className="navbar-menu">
                 <ul>
                   <li>
