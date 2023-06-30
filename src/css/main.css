@@ -1181,6 +1181,9 @@ h6 {
     font-size: 56px;
     line-height: 1;
   }
+  .recipe-card {
+    width: calc(33.33% - 32px);
+  }
 }
 @media only screen and (max-width: 768px) {
   .section {
@@ -1271,6 +1274,9 @@ h6 {
     width: 100%;
     padding: 48px;
   }
+  .recipe-card {
+    width: calc(50% - 32px);
+  }
 }
 @media only screen and (max-width: 575.98px) {
   .section {
@@ -1306,6 +1312,9 @@ h6 {
   .recipe-weekly-content p {
     max-width: 100%;
     margin-bottom: 24px;
+  }
+  .recipe-card {
+    width: 100%;
   }
 }
 @media only screen and (max-width: 480px) {

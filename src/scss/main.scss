@@ -983,6 +983,9 @@
         font-size: 56px;
         line-height: 1;
     }
+    .recipe-card{
+        width: calc(33.33% - 32px);
+    }
 }
 @media only screen and (max-width: 768px){
     .section{
@@ -1086,6 +1089,10 @@
 
         }
     }
+    .recipe-card{
+        width: calc(50% - 32px);
+    }
+    
    
 }
 @media only screen and (max-width: 575.98px) {
@@ -1133,6 +1140,9 @@
         &-img{
 
     }}
+    .recipe-card{
+        width: 100%;
+    }
 
 }
 @media only screen and (max-width: 480px) {
